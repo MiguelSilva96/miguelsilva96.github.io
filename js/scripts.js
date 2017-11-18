@@ -1,4 +1,4 @@
-/*!
+/*
     Title: Dev Portfolio Template
     Version: 1.2.0
     Last Change: 05/20/17
@@ -9,6 +9,8 @@
     Description: This file contains all the scripts associated with the single-page
     portfolio website.
 */
+
+import GithubActivity from 'github.js'
 
 (function($) {
 
@@ -95,3 +97,7 @@
     });
 
 })(jQuery);
+
+var git = new GithubActivity('miguelsilva96');
+git.processUserInfo();
+git.processEvents();

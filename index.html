@@ -9,6 +9,7 @@
 	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 	<link rel="icon" href="favicon.ico" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/octicons/2.0.2/octicons.min.css">
     <link rel="stylesheet" href="libs/font-awesome/css/font-awesome.min.css">
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/styles.css" rel="stylesheet">
@@ -132,40 +133,63 @@
         <h2 class="heading">Projects</h2>
         <div class="container">
             <div class="row">
-                <div class="project shadow-large">
-                    <div class="project-image">
-                        <img src="images/icon.png" />
+
+            <div class="col-md-6">
+                    <div class="project shadow-large">
+                        <div class="project-image">
+                            <img src="images/icon.png" />
+                        </div>
+                        <!-- End .project-image -->
+                        <div class="project-info">
+                            <h3>Throw Your Life</h3>
+                            <p>
+                                This is an Android game that I'm currently working on to improve my Android skills and 
+                                challenge my creativity.
+                            </p>
+                            <a href="https://github.com/miguelsilva96/throwyourlife">View Project</a>
+                        </div>
+                        <!-- End .project-info -->
                     </div>
-                    <!-- End .project-image -->
-                    <div class="project-info">
-                        <h3>Throw Your Life</h3>
-                        <p>
-                            This is an Android game that I'm currently working on to improve my Android skills and 
-                            challenge my creativity.
-                        </p>
-                        <a href="https://github.com/miguelsilva96/throwyourlife">View Project</a>
+                    <!-- End .project -->
+                    <div class="project shadow-large">
+                        <div class="project-image">
+                            <img src="images/cgtp.png" />
+                        </div>
+                        <!-- End .project-image -->
+                        <div class="project-info">
+                            <h3>3D Engine</h3>
+                            <p>
+                                This is a 3D Engine I developed with some colleagues from University of Minho, using C++ and OpenGL. 
+                                It was a project for the Computer Graphics course. 
+                                The collaborators are visible on the repository linked below, their github usernames: 
+                                joao-coelho, SkyBad20 and pedrocunha1596.                  
+                            </p>
+                            <a href="https://github.com/miguelsilva96/cgtp">View Project</a>
+                        </div>
+                        <!-- End .project-info -->
                     </div>
-                    <!-- End .project-info -->
+                    <!-- End .project -->
                 </div>
-                <!-- End .project -->
-                <div class="project shadow-large">
-                    <div class="project-image">
-                        <img src="images/cgtp.png" />
+                <div class="col-md-6">
+                    
+                    <div class="project shadow-large">
+
+                        <div class="top-github" id="topGithub">
+                            <img class="img-thumbnail shadow-large github-avatar" alt="avatar" src="#" id="gitHubAvatar"/> 
+                            
+                            <br/>
+                            <i class="fa fa-2x fa-github"></i> </br>
+                            <a href="#" id="gitHubLink"></a>
+                            <p class="text-top"> Github Activity </p>                        
+                        </div>
+
+                        <div id="git-lines">
+                        
+                        </div>
+        
                     </div>
-                    <!-- End .project-image -->
-                    <div class="project-info">
-                        <h3>3D Engine</h3>
-                        <p>
-                            This is a 3D Engine I developed with some colleagues from University of Minho, using C++ and OpenGL. 
-                            It was a project for the Computer Graphics course. 
-                            The collaborators are visible on the repository linked below, their github usernames: 
-                            joao-coelho, SkyBad20 and pedrocunha1596.                  
-                        </p>
-                        <a href="https://github.com/miguelsilva96/cgtp">View Project</a>
-                    </div>
-                    <!-- End .project-info -->
+            
                 </div>
-                <!-- End .project -->
             </div>
         </div>
     </div>
@@ -329,6 +353,8 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="js/scripts.min.js"></script>
+    <script src="js/githubAct.js"></script>
+
 </body>
 
 </html>
