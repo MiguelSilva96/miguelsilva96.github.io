@@ -151,7 +151,7 @@ class GithubActivity {
 			par.appendChild(msg);
 			div.appendChild(par);
 			par.className = 'text-githubInfo';
-			ava.className = 'commit-img';
+			ava.className = 'commit-img img-circle';
 			par.setAttribute("margin-left", "50px");
 		}
 	}
