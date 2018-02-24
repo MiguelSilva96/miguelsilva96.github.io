@@ -10,8 +10,6 @@
     portfolio website.
 */
 
-import GithubActivity from 'github.js'
-
 (function($) {
 
     // Remove no-js class
@@ -96,8 +94,9 @@ import GithubActivity from 'github.js'
         });
     });
 
-})(jQuery);
+    // get and show github info
+    var git = new GithubActivity('miguelsilva96');
+    git.processUserInfo();
+    git.processEvents();
 
-var git = new GithubActivity('miguelsilva96');
-git.processUserInfo();
-git.processEvents();
+})(jQuery);

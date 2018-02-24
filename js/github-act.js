@@ -1,9 +1,9 @@
 /*
     Author: Miguel Silva
-    Version: 1.0
+    Version: 1.1 - adds follow event
     Repository: https://www.github.com/miguelsilva96/miguelsilva96.github.io
-    
-    Description: This files uses the github api 
+
+    Description: This files uses the github api
     to get activity info about a certain user
     and treat it to display on a web page.
 */
@@ -19,7 +19,7 @@ class GithubActivity {
 
     request(action, url, func) {
         var request = new XMLHttpRequest();
-        
+
         request.open(action, url);
         request.onload= () => {
             if(request.readyState == 4 && request.status == 200) {
@@ -29,7 +29,7 @@ class GithubActivity {
                 } catch(err) {
                     console.log(err.message);
                 }
-            } 
+            }
         };
         request.send();
     }
@@ -78,9 +78,15 @@ class GithubActivity {
                     num--;
                     break;
                 case 'WatchEvent':
-                    context.treatSingleEvent(info[pos], 
+                    context.treatSingleEvent(info[pos],
                         'octicon-star',
                         ' starred ');
+                    num--;
+                    break;
+                case 'FollowEvent':
+                    context.treatSingleEvent(info[pos],
+                        'octicon-organization',
+                        ' followed ');
                     num--;
                     break;
             }
@@ -112,7 +118,7 @@ class GithubActivity {
         //Maybe use here date or smth
         var eventDes = document.createElement("P");
         var icon = document.createElement("I");
-        
+
         html.push(
             "<a href='",
             githubUrl, actor, "'>",
@@ -161,18 +167,14 @@ class GithubActivity {
     }
 
     processUserInfo() {
-        this.request('GET', 
-                    this.apiUrl+this.username, 
+        this.request('GET',
+                    this.apiUrl+this.username,
                     this.treatUser);
     }
 
     processEvents() {
-        this.request('GET', 
-                    this.apiUrl+this.username+'/events', 
+        this.request('GET',
+                    this.apiUrl+this.username+'/events',
                     this.treatEvents);
     }
 }
-
-var git = new GithubActivity('miguelsilva96');
-git.processUserInfo();
-git.processEvents();
